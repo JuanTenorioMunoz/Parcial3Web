@@ -17,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/lab' element={<Lab/>}></Route>
+          <Route path='/field/:id' element={<Field/>}></Route>
           <Route path='/field' element={<Field/>}></Route>
           <Route path='/dex' element={<Enciclopedia/>}></Route>
           <Route path='/login' element={<Login/>}></Route>

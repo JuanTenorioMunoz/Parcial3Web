@@ -12,7 +12,11 @@ const PokeCard = ({id, name, image}) => {
         <>
             <h1>{name}</h1>
             <img src={image}></img>
-            <button onClick={()=>{}}>ver detalle</button>
+            <div>
+                <button onClick={()=>{goToPokemon()}}>ver detalle</button>
+                <button onClick={()=>{capturePokemon()}}>Capturar</button>
+                <button onClick={()=>{freePokemon()}}>Liberar</button>
+            </div>
         </>
     )
 }

@@ -1,25 +1,33 @@
 import { useEffect, useState } from "react"
-import { fetchPokemons } from "../../services/apiFetch"
+import { fetchHREF, fetchPokemons } from "../../services/apiFetch"
 import { useDispatch, useSelector } from "react-redux"
 import { setApiPokemons } from "../../redux/pokemon/PokemonSlice";
 import PokeCard from "../../components/PokeCard/PokeCard";
+import { useParams } from "react-router-dom";
 
 const Field = () => {
 
+    const {id} = useParams()
     const dispatch = useDispatch();
     const pokemons = useSelector((state)=> state.pokemons.apiPokemons) ||[]
-    const test = [{name:"e"}]
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const fetchPokemonsFromApi = async () => {
+        if (id) {
+            const fetchOnePokemon = async () => {
+                const fetchedPokemon = await fetchHREF(id)
+            }
+        } else {
+            const fetchPokemonsFromApi = async () => {
             const pokemonsFetched = await fetchPokemons()
-            dispatch(setApiPokemons(pokemonsFetched))
+            dispatch(setApiPokemons(pokemonsFetched.content))
             console.log(pokemons,"pokestate")
             setLoading(false)
         }
         
         fetchPokemonsFromApi()
+        }
+        
     },[])
 
     return(

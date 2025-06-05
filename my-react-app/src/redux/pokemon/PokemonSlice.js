@@ -11,7 +11,7 @@ export const PokemonSlice = createSlice({
     initialState,
     reducers:{
         setApiPokemons:(state,action) => {
-            state.apiPokemons = action.payload.content
+            state.apiPokemons = action.payload
             console.log(state.apiPokemons, "direct from api")
         }
     }
