@@ -1,18 +1,19 @@
 import { useState } from 'react'
 
 import './App.css'
-import { BrowserRouter, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Lab from './pages/Lab/Lab'
 import Field from './pages/Field/Field'
 import Enciclopedia from './pages/Enciclopedia/Enciclopedia'
 import Login from './pages/Login/Login'
 import { store } from './redux/store'
+import { Provider } from 'react-redux'
 
 function App() {
 
   return (
     <>
-    <Provider store={store}></Provider>
+    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path='/lab' element={<Lab/>}></Route>
@@ -21,6 +22,7 @@ function App() {
           <Route path='/login' element={<Login/>}></Route>
         </Routes>
       </BrowserRouter>
+      </Provider>
     </>
   )
 }
