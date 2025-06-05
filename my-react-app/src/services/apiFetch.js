@@ -12,7 +12,7 @@ export const fetchPokemons = () => {
 
 export const fetchHREF = (href) => {
     try {
-        return fetch(HREF,href)
+        return fetch(HREF+href)
         .then((response) => response.json())
     } catch (error) {
         console.error(error)

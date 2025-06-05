@@ -16,7 +16,11 @@ const Field = () => {
         if (id) {
             const fetchOnePokemon = async () => {
                 const fetchedPokemon = await fetchHREF(id)
+                const fetchArray = [fetchedPokemon]
+                dispatch(setApiPokemons(fetchArray))
+                setLoading(false)
             }
+            fetchOnePokemon()
         } else {
             const fetchPokemonsFromApi = async () => {
             const pokemonsFetched = await fetchPokemons()
