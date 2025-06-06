@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom"
-import { addCapturedPokemons } from "../../redux/pokemon/PokemonSlice";
+import { addCapturedPokemons, freePokemon } from "../../redux/pokemon/PokemonSlice";
 
 const PokeCard = ({id, name, image}) => {
 
@@ -21,6 +21,11 @@ const PokeCard = ({id, name, image}) => {
 
     const capturePokemon = () => {
         dispatch(addCapturedPokemons(pokemon))
+        console.log("CLICK")
+    }
+
+    const freePokemon = () => {
+        dispatch(freePokemon(pokemon))
         console.log("CLICK")
     }
 

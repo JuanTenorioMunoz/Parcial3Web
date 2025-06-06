@@ -18,10 +18,23 @@ export const PokemonSlice = createSlice({
             state.capturedPokemons = [...state.capturedPokemons,action.payload]
             console.log("CAPTURADIO",state.capturedPokemons)
         },
-
+        editPokemon:(state,action) => {
+            const pokemonToFree = action.payload
+            const freePokemon = state.capturedPokemons.find((pokemon) => 
+            pokemon.id = pokemonToFree.id)
+            
+            if(freePokemon){
+                freePokemon.name = pokemonToFree.name
+            }
+        },
+        freePokemon:(state,action) => {
+            state.capturedPokemons.filter((poke)=>
+            poke !== action.payload.id)
+            console.log(state.capturedPokemons,"im free")
+        },
         
     }
 })
 
-export const {addCapturedPokemons,setApiPokemons} = PokemonSlice.actions;
+export const {freePokemon,addCapturedPokemons,setApiPokemons} = PokemonSlice.actions;
 export default PokemonSlice.reducer;
