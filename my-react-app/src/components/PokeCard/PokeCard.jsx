@@ -24,7 +24,7 @@ const PokeCard = ({id, name, image}) => {
         console.log("CLICK")
     }
 
-    const freePokemon = () => {
+    const freePokemoni = () => {
         dispatch(freePokemon(pokemon))
         console.log("CLICK")
     }
@@ -36,7 +36,7 @@ const PokeCard = ({id, name, image}) => {
             <div>
                 <button onClick={()=>{goToPokemon()}}>ver detalle</button>
                 <button onClick={()=>{capturePokemon()}}>Capturar</button>
-                <button onClick={()=>{freePokemon()}}>Liberar</button>
+                <button onClick={()=>{freePokemoni()}}>Liberar</button>
             </div>
         </>
     )

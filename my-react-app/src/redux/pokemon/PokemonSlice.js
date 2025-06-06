@@ -28,11 +28,10 @@ export const PokemonSlice = createSlice({
             }
         },
         freePokemon:(state,action) => {
-            state.capturedPokemons.filter((poke)=>
+            state.capturedPokemons = state.capturedPokemons.filter((poke)=>
             poke !== action.payload.id)
             console.log(state.capturedPokemons,"im free")
         },
-        
     }
 })
 
