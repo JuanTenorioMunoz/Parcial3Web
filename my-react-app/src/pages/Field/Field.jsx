@@ -32,7 +32,7 @@ const Field = () => {
         fetchPokemonsFromApi()
         }
         
-    },[])
+    },[id])
 
     return(
         <>

@@ -13,9 +13,15 @@ export const PokemonSlice = createSlice({
         setApiPokemons:(state,action) => {
             state.apiPokemons = action.payload
             console.log(state.apiPokemons, "direct from api")
-        }
+        },
+        addCapturedPokemons:(state,action) => {
+            state.capturedPokemons = [...state.capturedPokemons,action.payload]
+            console.log("CAPTURADIO",state.capturedPokemons)
+        },
+
+        
     }
 })
 
-export const {setApiPokemons} = PokemonSlice.actions;
+export const {addCapturedPokemons,setApiPokemons} = PokemonSlice.actions;
 export default PokemonSlice.reducer;
